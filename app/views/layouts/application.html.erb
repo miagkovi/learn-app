@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LearnApp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all',
+                               'data-turbolinks-track': 'reload' %>
+    
+  </head>
+
+  <body>
+    <div id="app">
+      <h1>Tasks</h1>
+      <div v-for="task in tasks">
+          <h3>{{task.body}}</h3>
+          <span>Priority: <strong>{{task.priority}}</strong> | </span>
+          <span v-if="task.done">Done</span>
+          <span v-else="task.done">Undone</span>
+          <hr />
+      </div>
+    </div>
+
+    <%= javascript_include_tag 'application',
+                               'data-turbolinks-track': 'reload' %>
+  </body>
+</html>
