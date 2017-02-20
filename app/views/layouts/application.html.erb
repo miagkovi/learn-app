@@ -19,6 +19,7 @@
           <span v-else="task.done">Undone</span>
           <hr />
       </div>
+        <button v-on:click="createTask">Create test task</button>
     </div>
 
     <%= javascript_include_tag 'application',
